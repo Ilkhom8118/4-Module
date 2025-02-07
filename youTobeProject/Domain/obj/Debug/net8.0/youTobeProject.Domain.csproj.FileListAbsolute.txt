@@ -1,0 +1,11 @@
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\bin\Debug\net8.0\youTobeProject.Domain.deps.json
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\bin\Debug\net8.0\youTobeProject.Domain.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\bin\Debug\net8.0\youTobeProject.Domain.pdb
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\youTobeProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\youTobeProject.Domain.AssemblyInfoInputs.cache
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\youTobeProject.Domain.AssemblyInfo.cs
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\youTobeProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\youTobeProject.Domain.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\refint\youTobeProject.Domain.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\youTobeProject.Domain.pdb
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\Domain\obj\Debug\net8.0\ref\youTobeProject.Domain.dll

@@ -1,0 +1,17 @@
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\bin\Debug\net8.0\youTobeProject.DataBase.deps.json
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\bin\Debug\net8.0\youTobeProject.DataBase.runtimeconfig.json
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\bin\Debug\net8.0\youTobeProject.DataBase.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\bin\Debug\net8.0\youTobeProject.DataBase.pdb
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\bin\Debug\net8.0\youTobeProject.Domain.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\bin\Debug\net8.0\youTobeProject.Domain.pdb
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.csproj.AssemblyReference.cache
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.AssemblyInfoInputs.cache
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.AssemblyInfo.cs
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.csproj.CoreCompileInputs.cache
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeP.A328C96B.Up2Date
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\refint\youTobeProject.DataBase.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.pdb
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.genruntimeconfig.cache
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\ref\youTobeProject.DataBase.dll
