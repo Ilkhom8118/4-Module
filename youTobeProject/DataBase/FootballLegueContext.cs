@@ -7,8 +7,10 @@ public class FootballLegueContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FootballLeague_Db;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+        optionsBuilder.UseSqlServer("Server=DESKTOP-JA0B9SA\\SQLEXPRESS;Database=FootballLeague_Db;User Id=sa;Password=1;TrustServerCertificate=True;");
     }
+
+
     public DbSet<League> Leagues { get; set; }
     public DbSet<Team> Teams { get; set; }
 }

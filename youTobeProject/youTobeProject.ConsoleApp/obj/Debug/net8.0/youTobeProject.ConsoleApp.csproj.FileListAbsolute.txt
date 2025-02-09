@@ -154,3 +154,4 @@ C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\youTobeProject.ConsoleApp\o
 C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\youTobeProject.ConsoleApp\obj\Debug\net8.0\youTobeProject.ConsoleApp.pdb
 C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\youTobeProject.ConsoleApp\obj\Debug\net8.0\youTobeProject.ConsoleApp.genruntimeconfig.cache
 C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\youTobeProject.ConsoleApp\obj\Debug\net8.0\ref\youTobeProject.ConsoleApp.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\youTobeProject.ConsoleApp\obj\Debug\net8.0\youTobeProject.ConsoleApp.sourcelink.json

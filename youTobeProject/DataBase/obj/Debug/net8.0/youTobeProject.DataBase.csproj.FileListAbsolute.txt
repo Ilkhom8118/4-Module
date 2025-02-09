@@ -15,3 +15,4 @@ C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\r
 C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.pdb
 C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.genruntimeconfig.cache
 C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\ref\youTobeProject.DataBase.dll
+C:\Users\zeeyoD\Desktop\.NET\4-Module\youTobeProject\DataBase\obj\Debug\net8.0\youTobeProject.DataBase.sourcelink.json

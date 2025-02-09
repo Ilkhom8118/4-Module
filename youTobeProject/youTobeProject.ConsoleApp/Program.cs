@@ -1,5 +1,4 @@
 ﻿using youTobeProject.DataBase;
-using youTobeProject.Domain;
 
 namespace youTobeProject.ConsoleApp
 {
@@ -8,24 +7,19 @@ namespace youTobeProject.ConsoleApp
         private static FootballLegueContext context = new FootballLegueContext();
         static void Main(string[] args)
         {
-            List<Team> teams = new List<Team> {
-                new Team
-                {
-                    Name = "Barselona",
-                    LeagueId = 1
-                },
-                new Team
-                {
-                    Name = "Juventus",
-                    LeagueId = 1
-                },
-                new Team
-                {
-                    Name = "Real Madrid",
-                    LeagueId = 1
-                },
-            };
-            context.AddRange(teams);
+            //var leagues = (from i in context.Teams
+            //               where i.LeagueId == 3
+            //               select i).ToList();
+            //foreach (var league in leagues)
+            //{
+            //    Console.WriteLine(league.Name);
+            //}
+            //Team team = new Team() { Id = 1, Name = "Ajax", LeagueId = 2, };
+            //context.Teams.Update(team);
+            //context.SaveChanges();
+
+            var league = context.Leagues.Find(1);
+            context.Leagues.Remove(league);
             context.SaveChanges();
         }
     }
