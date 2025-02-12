@@ -20,6 +20,11 @@ public class CommentRepo : ICommentRepo
         return obj;
     }
 
+    public async Task<bool> CommentExistsAsync(long id)
+    {
+        return await MainContext.Comments.AnyAsync(c => c.CommentId == id);
+    }
+
     public async Task DeleteAsync(long id)
     {
         var remove = await GetByIdAsync(id);

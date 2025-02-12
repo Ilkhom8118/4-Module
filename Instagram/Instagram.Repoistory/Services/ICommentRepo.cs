@@ -9,4 +9,5 @@ public interface ICommentRepo
     Task<Comment> GetByIdAsync(long id);
     Task DeleteAsync(long id);
     Task UpdateAsync(Comment obj);
+    Task<bool> CommentExistsAsync(long id);
 }
