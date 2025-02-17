@@ -13,7 +13,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.Name).IsRequired().HasMaxLength(50);
         builder.Property(u => u.Email).IsRequired().HasMaxLength(50);
         builder.Property(u => u.Role).IsRequired();
-        builder.HasMany(u => u.Carts).WithOne(c => c.User).HasForeignKey(u => u.UserId);
+        builder.HasOne(u => u.Carts).WithOne(c => c.User).HasForeignKey<Cart>(u => u.UserId);
         builder.HasMany(u => u.Reviews).WithOne(r => r.User).HasForeignKey(u => u.UserId);
         builder.HasMany(u => u.Orders).WithOne(o => o.User).HasForeignKey(u => u.UserId);
     }

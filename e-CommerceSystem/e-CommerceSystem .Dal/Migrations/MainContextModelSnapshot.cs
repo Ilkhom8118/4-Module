@@ -35,7 +35,8 @@ namespace e_CommerceSystem_.Dal.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Cart");
                 });
@@ -234,14 +235,14 @@ namespace e_CommerceSystem_.Dal.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Table", (string)null);
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("e_CommerceSystem_.Dal.Entities.Cart", b =>
                 {
                     b.HasOne("e_CommerceSystem_.Dal.Entities.User", "User")
-                        .WithMany("Carts")
-                        .HasForeignKey("UserId")
+                        .WithOne("Carts")
+                        .HasForeignKey("e_CommerceSystem_.Dal.Entities.Cart", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -378,7 +379,8 @@ namespace e_CommerceSystem_.Dal.Migrations
 
             modelBuilder.Entity("e_CommerceSystem_.Dal.Entities.User", b =>
                 {
-                    b.Navigation("Carts");
+                    b.Navigation("Carts")
+                        .IsRequired();
 
                     b.Navigation("Orders");
 

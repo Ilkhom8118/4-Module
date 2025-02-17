@@ -10,7 +10,7 @@ namespace e_CommerceSystem_.Dal.EntityConfiguration
         {
             builder.ToTable("Cart");
             builder.HasKey(c => c.Id);
-            builder.HasOne(c => c.User).WithMany(u => u.Carts).HasForeignKey(c => c.UserId);
+            builder.HasOne(c => c.User).WithOne(u => u.Carts).HasForeignKey<Cart>(c => c.UserId);
             builder.HasMany(c => c.CartProducts).WithOne(cp => cp.Cart).HasForeignKey(c => c.CartId);
 
         }

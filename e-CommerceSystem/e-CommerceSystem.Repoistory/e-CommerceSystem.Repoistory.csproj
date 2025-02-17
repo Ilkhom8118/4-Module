@@ -11,8 +11,4 @@
     <ProjectReference Include="..\e-CommerceSystem .Dal\e-CommerceSystem .Dal.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\" />
-  </ItemGroup>
-
 </Project>

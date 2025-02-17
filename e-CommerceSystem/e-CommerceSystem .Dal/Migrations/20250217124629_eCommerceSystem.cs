@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace e_CommerceSystem_.Dal.Migrations
 {
     /// <inheritdoc />
-    public partial class Intial : Migration
+    public partial class eCommerceSystem : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -31,7 +31,7 @@ namespace e_CommerceSystem_.Dal.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Table",
+                name: "User",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -42,7 +42,7 @@ namespace e_CommerceSystem_.Dal.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Table", x => x.Id);
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,9 +80,9 @@ namespace e_CommerceSystem_.Dal.Migrations
                 {
                     table.PrimaryKey("PK_Cart", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Cart_Table_UserId",
+                        name: "FK_Cart_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Table",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -100,9 +100,9 @@ namespace e_CommerceSystem_.Dal.Migrations
                 {
                     table.PrimaryKey("PK_Order", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Order_Table_UserId",
+                        name: "FK_Order_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Table",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -128,9 +128,9 @@ namespace e_CommerceSystem_.Dal.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Review_Table_UserId",
+                        name: "FK_Review_User_UserId",
                         column: x => x.UserId,
-                        principalTable: "Table",
+                        principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -210,7 +210,8 @@ namespace e_CommerceSystem_.Dal.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Cart_UserId",
                 table: "Cart",
-                column: "UserId");
+                column: "UserId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_CartProduct_CartId",
@@ -279,7 +280,7 @@ namespace e_CommerceSystem_.Dal.Migrations
                 name: "Product");
 
             migrationBuilder.DropTable(
-                name: "Table");
+                name: "User");
 
             migrationBuilder.DropTable(
                 name: "Category");
