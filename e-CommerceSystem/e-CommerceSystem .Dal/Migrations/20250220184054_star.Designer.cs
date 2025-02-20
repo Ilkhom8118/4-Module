@@ -12,8 +12,8 @@ using e_CommerceSystem_.Dal;
 namespace e_CommerceSystem_.Dal.Migrations
 {
     [DbContext(typeof(MainContext))]
-    [Migration("20250217124629_eCommerceSystem")]
-    partial class eCommerceSystem
+    [Migration("20250220184054_star")]
+    partial class star
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,7 @@ namespace e_CommerceSystem_.Dal.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Cart");
+                    b.ToTable("Cart", (string)null);
                 });
 
             modelBuilder.Entity("e_CommerceSystem_.Dal.Entities.CartProduct", b =>
@@ -326,7 +326,7 @@ namespace e_CommerceSystem_.Dal.Migrations
                     b.HasOne("e_CommerceSystem_.Dal.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Category");

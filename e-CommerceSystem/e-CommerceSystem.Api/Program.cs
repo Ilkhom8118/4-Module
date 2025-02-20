@@ -1,5 +1,8 @@
 
 using e_CommerceSystem.Api.Configurations;
+using e_CommerceSystem.Bll.MappingProfiles;
+using e_CommerceSystem.Bll.Services;
+using e_CommerceSystem.Repoistory.Service;
 
 namespace e_CommerceSystem.Api
 {
@@ -17,8 +20,14 @@ namespace e_CommerceSystem.Api
             builder.Services.AddSwaggerGen();
 
             builder.ConfigurateDataBase();
-            var app = builder.Build();
+            builder.ConfigureValidator();
 
+            builder.Services.AddAutoMapper(typeof(UserProfiles));
+
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IUserRepo, UserRepo>();
+
+            var app = builder.Build();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

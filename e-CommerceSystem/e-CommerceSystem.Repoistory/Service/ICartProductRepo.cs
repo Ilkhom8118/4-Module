@@ -4,9 +4,9 @@ namespace e_CommerceSystem.Repoistory.Service;
 
 public interface ICartProductRepo
 {
-    Task<CartProduct> AddAsync(CartProduct obj);
-    Task DeleteAsync(long id);
-    Task UpdateAsync(CartProduct obj);
-    Task<CartProduct> GetByIdAsync(long id);
     IQueryable<CartProduct> GetAll();
+    Task<CartProduct> AddAsync(CartProduct obj);
+    Task DeleteAsync(long cartId, long productId);
+    Task UpdateAsync(CartProduct cart, CartProduct product);
+    Task<CartProduct> GetByIdAsync(long cartId, long productId);
 }

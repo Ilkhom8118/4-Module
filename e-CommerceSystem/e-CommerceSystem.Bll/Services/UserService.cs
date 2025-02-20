@@ -1,12 +1,68 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using e_CommerceSystem.Bll.DTOs;
+using e_CommerceSystem.Repoistory.Service;
+using e_CommerceSystem_.Dal.Entities;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 
-namespace e_CommerceSystem.Bll.Services
+namespace e_CommerceSystem.Bll.Services;
+
+public class UserService : IUserService
 {
-    internal class UserService
+    private readonly IUserRepo UserRepo;
+    private readonly IValidator<UserCreateDto> UserCreateDtoValidator;
+    private readonly IMapper Mapper;
+    public UserService(IUserRepo userRepo, IValidator<UserCreateDto> userCreateDtoValidator, IMapper mapper)
     {
+        UserRepo = userRepo;
+        UserCreateDtoValidator = userCreateDtoValidator;
+        Mapper = mapper;
+    }
+    public async Task<User> AddAsync(UserCreateDto obj)
+    {
+        var validatorRes = await UserCreateDtoValidator.ValidateAsync(obj);
+        if (validatorRes.IsValid == false)
+        {
+            throw new ValidationException($"{string.Join(',', validatorRes.Errors)}");
+        }
+        var user = Mapper.Map<User>(obj);
+        return await UserRepo.AddAsync(user);
+    }
+
+    public async Task DeleteAsync(long id)
+    {
+        if (id < 0)
+        {
+            throw new ValidationException($"Not found id : {id}");
+        }
+        await UserRepo.DeleteAsync(id);
+    }
+
+    public async Task<ICollection<UserDto>> GetallAsync()
+    {
+        var all = UserRepo.GetAll();
+        var res = await all.ToListAsync();
+        return res.Select(g => Mapper.Map<UserDto>(g)).ToList();
+    }
+
+    public async Task<UserDto> GetByIdAsync(long id)
+    {
+        var byId = await UserRepo.GetByIdAsync(id);
+        if (byId == null)
+        {
+            throw new KeyNotFoundException($"Not found id : {id}");
+        }
+        return Mapper.Map<UserDto>(byId);
+    }
+
+    public async Task UpdateAsync(UserDto obj)
+    {
+        var update = await UserRepo.GetByIdAsync(obj.Id);
+        if (update == null)
+        {
+            throw new Exception($"Not found Id : {obj.Id}");
+        }
+        Mapper.Map(obj, update);
+        await UserRepo.UpdateAsync(update);
     }
 }

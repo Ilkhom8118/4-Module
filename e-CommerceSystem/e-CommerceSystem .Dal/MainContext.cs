@@ -7,6 +7,7 @@ namespace e_CommerceSystem_.Dal;
 public class MainContext : DbContext
 {
     public DbSet<User> Users { get; set; }
+    public DbSet<Cart> Carts { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<Review> Reviews { get; set; }
     public DbSet<Payment> Payments { get; set; }
@@ -20,6 +21,7 @@ public class MainContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new UserConfiguration());
+        modelBuilder.ApplyConfiguration(new CartConfiguration());
         modelBuilder.ApplyConfiguration(new OrderConfiguration());
         modelBuilder.ApplyConfiguration(new ReviewConfiguration());
         modelBuilder.ApplyConfiguration(new PaymentConfiguration());

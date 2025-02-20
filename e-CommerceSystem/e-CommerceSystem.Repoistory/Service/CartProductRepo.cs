@@ -29,7 +29,8 @@ public class CartProductRepo : ICartProductRepo
 
     public IQueryable<CartProduct> GetAll()
     {
-        throw new NotImplementedException();
+        var list = MainContext.CartProducts;
+        return list;
     }
 
     public async Task<CartProduct> GetByIdAsync(long cartId, long productId)
@@ -42,8 +43,10 @@ public class CartProductRepo : ICartProductRepo
         return res;
     }
 
-    public Task UpdateAsync(CartProduct obj)
+    public async Task UpdateAsync(CartProduct cart, CartProduct product)
     {
-        throw new NotImplementedException();
+        var obj = await GetByIdAsync(cart.CartId, product.ProductId);
+        MainContext.Update(obj);
+        await MainContext.SaveChangesAsync();
     }
 }

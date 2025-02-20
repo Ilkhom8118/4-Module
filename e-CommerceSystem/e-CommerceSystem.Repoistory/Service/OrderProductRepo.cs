@@ -1,12 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using e_CommerceSystem_.Dal;
+using e_CommerceSystem_.Dal.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace e_CommerceSystem.Repoistory.Service
+namespace e_CommerceSystem.Repoistory.Service;
+
+public class OrderProductRepo : IOrderProductRepo
 {
-    internal class OrderProduct
+    private MainContext MainContext;
+
+    public OrderProductRepo(MainContext mainContext)
     {
+        MainContext = mainContext;
+    }
+
+    public async Task<OrderProduct> AddAsync(OrderProduct obj)
+    {
+        await MainContext.AddAsync(obj);
+        await MainContext.SaveChangesAsync();
+        return obj;
+    }
+
+    public async Task DeleteAsync(long orderId, long productId)
+    {
+        var remove = await GetByIdAsync(orderId, productId);
+        MainContext.Remove(remove);
+        await MainContext.SaveChangesAsync();
+    }
+
+    public IQueryable<OrderProduct> GetAll()
+    {
+        var list = MainContext.OrderProducts;
+        return list;
+    }
+
+    public async Task<OrderProduct> GetByIdAsync(long orderId, long productId)
+    {
+        var byId = await MainContext.OrderProducts.FirstOrDefaultAsync(op => op.OrderId == orderId && op.ProductId == productId);
+        if (byId == null)
+        {
+            throw new Exception($"Order not found : {orderId}, Poduct not found {productId}");
+        }
+        return byId;
+    }
+
+    public async Task UpdateAsync(OrderProduct order, OrderProduct product)
+    {
+        var obj = await GetByIdAsync(order.OrderId, product.ProductId);
+        MainContext.Update(obj);
+        await MainContext.SaveChangesAsync();
     }
 }
