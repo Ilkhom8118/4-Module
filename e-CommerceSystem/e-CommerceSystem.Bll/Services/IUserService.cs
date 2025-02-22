@@ -7,7 +7,7 @@ public interface IUserService
 {
     Task<User> AddAsync(UserCreateDto obj);
     Task DeleteAsync(long id);
-    Task UpdateAsync(UserDto obj);
+    Task UpdateAsync(UserUpdateDto obj);
     Task<UserDto> GetByIdAsync(long id);
     Task<ICollection<UserDto>> GetallAsync();
 }

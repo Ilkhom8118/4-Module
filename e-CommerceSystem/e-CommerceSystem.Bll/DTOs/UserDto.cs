@@ -1,4 +1,5 @@
-﻿using e_CommerceSystem_.Dal.Enums;
+﻿using e_CommerceSystem_.Dal.Entities;
+using e_CommerceSystem_.Dal.Enums;
 
 namespace e_CommerceSystem.Bll.DTOs;
 
@@ -8,7 +9,6 @@ public class UserDto
     public string Name { get; set; }
     public string Email { get; set; }
     public Roles Role { get; set; }
-    public List<CartDto> Carts { get; set; }
-    public List<OrderDto> Orders { get; set; }
-    public List<ReviewDto> Reviews { get; set; }
+    public ICollection<Order> Orders { get; set; }
+    public ICollection<Review> Reviews { get; set; }
 }

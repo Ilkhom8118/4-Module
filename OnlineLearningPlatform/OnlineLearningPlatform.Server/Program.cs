@@ -1,10 +1,5 @@
 
-using e_CommerceSystem.Api.Configurations;
-using e_CommerceSystem.Bll.MappingProfiles;
-using e_CommerceSystem.Bll.Services;
-using e_CommerceSystem.Repoistory.Service;
-
-namespace e_CommerceSystem.Api
+namespace OnlineLearningPlatform.Server
 {
     public class Program
     {
@@ -19,20 +14,8 @@ namespace e_CommerceSystem.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.ConfigurateDataBase();
-            builder.ConfigureValidator();
-
-            builder.Services.AddAutoMapper(typeof(Program));
-            
-
-
-            builder.Services.AddScoped<IUserService, UserService>();
-            builder.Services.AddScoped<IUserRepo, UserRepo>();
-            builder.Services.AddScoped<IProductService, ProductService>();
-            builder.Services.AddScoped<IProductRepo, ProductRepo>();
-
-
             var app = builder.Build();
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

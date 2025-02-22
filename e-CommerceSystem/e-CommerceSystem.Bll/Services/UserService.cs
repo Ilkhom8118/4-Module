@@ -4,6 +4,7 @@ using e_CommerceSystem.Repoistory.Service;
 using e_CommerceSystem_.Dal.Entities;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace e_CommerceSystem.Bll.Services;
 
@@ -11,12 +12,14 @@ public class UserService : IUserService
 {
     private readonly IUserRepo UserRepo;
     private readonly IValidator<UserCreateDto> UserCreateDtoValidator;
+    private readonly IValidator<UserUpdateDto> UserUpdateDtoValidator;
     private readonly IMapper Mapper;
-    public UserService(IUserRepo userRepo, IValidator<UserCreateDto> userCreateDtoValidator, IMapper mapper)
+    public UserService(IUserRepo userRepo, IValidator<UserCreateDto> userCreateDtoValidator, IMapper mapper, IValidator<UserUpdateDto> userUpdateeDtoValidator)
     {
         UserRepo = userRepo;
         UserCreateDtoValidator = userCreateDtoValidator;
         Mapper = mapper;
+        UserUpdateDtoValidator = userUpdateeDtoValidator;
     }
     public async Task<User> AddAsync(UserCreateDto obj)
     {
@@ -55,8 +58,13 @@ public class UserService : IUserService
         return Mapper.Map<UserDto>(byId);
     }
 
-    public async Task UpdateAsync(UserDto obj)
+    public async Task UpdateAsync(UserUpdateDto obj)
     {
+        var validator = await UserUpdateDtoValidator.ValidateAsync(obj);
+        if (validator.IsValid == false)
+        {
+            throw new ValidationException($"{string.Join(',', validator.Errors)}");
+        }
         var update = await UserRepo.GetByIdAsync(obj.Id);
         if (update == null)
         {

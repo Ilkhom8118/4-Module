@@ -1,11 +1,11 @@
-﻿namespace e_CommerceSystem.Bll.DTOs
+﻿using e_CommerceSystem_.Dal.Entities;
+
+namespace e_CommerceSystem.Bll.DTOs
 {
     public class CartDto
     {
         public long Id { get; set; }
         public long UserId { get; set; }
-        public List<CartProductDto> CartProducts { get; set; } = new List<CartProductDto>();
-       
-
+        public ICollection<CartProduct> CartProducts { get; set; }
     }
 }

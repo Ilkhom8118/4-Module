@@ -6,5 +6,8 @@ public static class ValidatorConfiguration
     public static void ConfigureValidator(this WebApplicationBuilder builder)
     {
         builder.Services.AddValidatorsFromAssemblyContaining<UserCreateDto>();
+        builder.Services.AddValidatorsFromAssemblyContaining<UserUpdateDto>();
+        builder.Services.AddValidatorsFromAssemblyContaining<ProductCreateDto>();
+        builder.Services.AddValidatorsFromAssemblyContaining<ProductUpdateDto>();
     }
 }

@@ -46,8 +46,13 @@ namespace e_CommerceSystem.Repoistory.Service
 
         public async Task UpdateAsync(Product obj)
         {
-            var guid = await GetByIdAsync(obj.Id);
-            MainContext.Update(guid);
+            var existingProduct = await GetByIdAsync(obj.Id);
+            if (existingProduct == null)
+            {
+                throw new Exception($"Product not found {obj.Id}");
+            }
+
+            MainContext.Entry(existingProduct).CurrentValues.SetValues(obj);
             await MainContext.SaveChangesAsync();
         }
     }

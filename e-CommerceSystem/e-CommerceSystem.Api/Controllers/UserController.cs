@@ -25,7 +25,7 @@ public class UserController : ControllerBase
         await UserService.DeleteAsync(id);
     }
     [HttpPut("updateUser")]
-    public async Task UpdateAsync(UserDto obj)
+    public async Task UpdateAsync(UserUpdateDto obj)
     {
         await UserService.UpdateAsync(obj);
     }

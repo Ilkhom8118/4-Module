@@ -10,4 +10,9 @@
     <ProjectReference Include="..\CarRendalSystem.Repoistory\CarRendalSystem.Repoistory.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MappingProfile\" />
+    <Folder Include="Validators\" />
+  </ItemGroup>
+
 </Project>
