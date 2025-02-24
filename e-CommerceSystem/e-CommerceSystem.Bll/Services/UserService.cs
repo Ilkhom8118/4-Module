@@ -4,7 +4,6 @@ using e_CommerceSystem.Repoistory.Service;
 using e_CommerceSystem_.Dal.Entities;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
 namespace e_CommerceSystem.Bll.Services;
 
@@ -70,7 +69,7 @@ public class UserService : IUserService
         {
             throw new Exception($"Not found Id : {obj.Id}");
         }
-        Mapper.Map(obj, update);
-        await UserRepo.UpdateAsync(update);
+        var u = Mapper.Map(obj, update);
+        await UserRepo.UpdateAsync(u);
     }
 }

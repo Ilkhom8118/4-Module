@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using e_CommerceSystem_.Dal.Enums;
 
-namespace e_CommerceSystem.Bll.DTOs
+namespace e_CommerceSystem.Bll.DTOs;
+
+public class PaymentCreateDto
 {
-    public class PaymentCreateDto
-    {
-    }
+    public long OrderId { get; set; }
+    public decimal Amount { get; set; }
+    public StatusPayment StatusPayment { get; set; }
 }

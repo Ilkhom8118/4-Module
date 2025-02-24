@@ -43,10 +43,10 @@ public class CartProductRepo : ICartProductRepo
         return res;
     }
 
-    public async Task UpdateAsync(CartProduct cart, CartProduct product)
+    public async Task UpdateAsync(CartProduct obj)
     {
-        var obj = await GetByIdAsync(cart.CartId, product.ProductId);
-        MainContext.Update(obj);
+        var byId = await GetByIdAsync(obj.CartId, obj.ProductId);
+        MainContext.Update(byId);
         await MainContext.SaveChangesAsync();
     }
 }

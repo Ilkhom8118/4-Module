@@ -44,10 +44,10 @@ public class OrderProductRepo : IOrderProductRepo
         return byId;
     }
 
-    public async Task UpdateAsync(OrderProduct order, OrderProduct product)
+    public async Task UpdateAsync(OrderProduct obj)
     {
-        var obj = await GetByIdAsync(order.OrderId, product.ProductId);
-        MainContext.Update(obj);
+        var byId = await GetByIdAsync(obj.OrderId, obj.ProductId);
+        MainContext.Update(byId);
         await MainContext.SaveChangesAsync();
     }
 }

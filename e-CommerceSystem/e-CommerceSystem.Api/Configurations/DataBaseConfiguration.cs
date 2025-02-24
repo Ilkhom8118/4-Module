@@ -1,17 +1,21 @@
-﻿using e_CommerceSystem_.Dal;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using e_CommerceSystem_.Dal;
 
 namespace e_CommerceSystem.Api.Configurations
 {
     public static class DataBaseConfiguration
     {
-        public static void ConfigurateDataBase(this WebApplicationBuilder builder)
+        public static void ConfigureDataBase(this WebApplicationBuilder builder)
         {
             var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
-            builder.Services.AddDbContext<MainContext>(o =>
+
+            builder.Services.AddDbContext<MainContext>(options =>
             {
-                o.UseSqlServer(connectionString);
+                options.UseSqlServer(connectionString);
             });
         }
     }
 }
+
+

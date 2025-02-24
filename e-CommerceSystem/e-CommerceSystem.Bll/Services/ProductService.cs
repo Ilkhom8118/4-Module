@@ -9,11 +9,11 @@ namespace e_CommerceSystem.Bll.Services
 {
     public class ProductService : IProductService
     {
-        private readonly Mapper Mapper;
         private readonly IProductRepo ProductRepo;
+        private readonly IMapper Mapper;
         private readonly IValidator<ProductCreateDto> ProductCreateValidator;
         private readonly IValidator<ProductUpdateDto> ProductUpdateValidator;
-        public ProductService(IProductRepo productRepo, Mapper mapper, IValidator<ProductCreateDto> productCreateValidator, IValidator<ProductUpdateDto> productUpdateValidator = null)
+        public ProductService(IProductRepo productRepo, IMapper mapper, IValidator<ProductCreateDto> productCreateValidator, IValidator<ProductUpdateDto> productUpdateValidator)
         {
             Mapper = mapper;
             ProductRepo = productRepo;
@@ -70,8 +70,8 @@ namespace e_CommerceSystem.Bll.Services
             {
                 throw new ValidationException($"Not found Id : {obj.Id}");
             }
-            Mapper.Map(obj, idObj);
-            await ProductRepo.UpdateAsync(idObj);
+            var p = Mapper.Map(obj, idObj);
+            await ProductRepo.UpdateAsync(p);
 
         }
     }

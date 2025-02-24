@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace e_CommerceSystem.Bll.DTOs;
 
-namespace e_CommerceSystem.Bll.DTOs
+public class ReviewDto
 {
-    public class ReviewDto
-    {
-    }
+    public long Id { get; set; }
+    public long UserId { get; set; }
+    public long ProductId { get; set; }
+    public decimal Rating { get; set; }
+    public string Comment { get; set; }
 }

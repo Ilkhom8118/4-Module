@@ -10,7 +10,7 @@ public class ProductDto
     public decimal Price { get; set; }
     public decimal Stock { get; set; }
     public long CategoryId { get; set; }
-    public ICollection<CartProduct> CartProducts { get; set; }
-    public ICollection<OrderProduct> OrderProducts { get; set; }
-    public ICollection<Review> Reviews { get; set; }
+    public ICollection<CartProductDto> CartProducts { get; set; }
+    public ICollection<OrderProductDto> OrderProducts { get; set; }
+    public ICollection<ReviewDto> Reviews { get; set; }
 }

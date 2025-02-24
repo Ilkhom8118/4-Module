@@ -9,6 +9,6 @@ public class UserDto
     public string Name { get; set; }
     public string Email { get; set; }
     public Roles Role { get; set; }
-    public ICollection<Order> Orders { get; set; }
-    public ICollection<Review> Reviews { get; set; }
+    public ICollection<OrderDto> Orders { get; set; }
+    public ICollection<ReviewDto> Reviews { get; set; }
 }

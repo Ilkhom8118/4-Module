@@ -7,6 +7,6 @@ public interface ICartProductRepo
     IQueryable<CartProduct> GetAll();
     Task<CartProduct> AddAsync(CartProduct obj);
     Task DeleteAsync(long cartId, long productId);
-    Task UpdateAsync(CartProduct cart, CartProduct product);
+    Task UpdateAsync(CartProduct obj);
     Task<CartProduct> GetByIdAsync(long cartId, long productId);
 }
