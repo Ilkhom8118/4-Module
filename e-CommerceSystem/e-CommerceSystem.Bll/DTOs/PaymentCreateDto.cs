@@ -4,7 +4,7 @@ namespace e_CommerceSystem.Bll.DTOs;
 
 public class PaymentCreateDto
 {
-    public long OrderId { get; set; }
+    public long? OrderId { get; set; }
     public decimal Amount { get; set; }
     public StatusPayment StatusPayment { get; set; }
 }

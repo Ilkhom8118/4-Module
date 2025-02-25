@@ -13,7 +13,7 @@ namespace e_CommerceSystem.Bll.Validators
     {
         public PaymentCreateDtoValidator(IPaymentRepo paymentRepo)
         {
-            RuleFor(p => p.OrderId).GreaterThan(0).WithMessage("The Order ID must be greater than 0.");
+            
             RuleFor(p => p.Amount).GreaterThan(0).WithMessage("The payment amount must be greater than 0.");
             RuleFor(payment => payment.StatusPayment).IsInEnum().WithMessage("Incorrect payment status.");
         }
