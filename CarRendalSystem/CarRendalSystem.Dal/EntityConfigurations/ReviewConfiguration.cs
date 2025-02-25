@@ -13,7 +13,7 @@ public class ReviewConfiguration : IEntityTypeConfiguration<Review>
         builder.Property(r => r.Rating).IsRequired().HasColumnType("decimal(18,2)");
         builder.Property(r => r.Comment).IsRequired(false).HasMaxLength(250);
 
-        builder.HasOne(b => b.Car).WithMany(c => c.Reviews).HasForeignKey(b => b.CarId);
-        builder.HasOne(b => b.Customer).WithMany(c => c.Reviews).HasForeignKey(b => b.CustomerId);
+        builder.HasOne(b => b.Car).WithMany(c => c.Reviews).HasForeignKey(b => b.CarId).OnDelete(DeleteBehavior.Cascade);
+        builder.HasOne(b => b.Customer).WithMany(c => c.Reviews).HasForeignKey(b => b.CustomerId).OnDelete(DeleteBehavior.Cascade);
     }
 }

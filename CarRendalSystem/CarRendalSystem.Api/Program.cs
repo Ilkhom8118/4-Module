@@ -1,5 +1,7 @@
-
 using CarRendalSystem.Api.Configurations;
+using CarRendalSystem.Bll.MappingProfile;
+using CarRendalSystem.Bll.Services;
+using CarRendalSystem.Repoistory.Services;
 
 namespace CarRendalSystem.Api
 {
@@ -17,8 +19,23 @@ namespace CarRendalSystem.Api
             builder.Services.AddSwaggerGen();
 
             builder.ConfigurateDataBase();
-            var app = builder.Build();
+            builder.ConfigureValidator();
+            
 
+            builder.Services.AddAutoMapper(typeof(BookingProfiles), typeof(CarProfiles),
+                typeof(CustomerProfiles), typeof(PaymentProfiles), typeof(ReviewProfiles));
+
+            builder.Services.AddScoped<IBookingService, BookingService>();
+            builder.Services.AddScoped<IBookingRepo, BookingRepo>();
+            builder.Services.AddScoped<ICarService, CarService>();
+            builder.Services.AddScoped<ICarRepo, CarRepo>();
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
+            builder.Services.AddScoped<ICustomerRepo, CustomerRepo>();
+            builder.Services.AddScoped<IPaymentService, PaymentService>();
+            builder.Services.AddScoped<IPaymentRepo, PaymentRepo>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
+            builder.Services.AddScoped<IReviewRepo, ReviewRepo>();
+            var app = builder.Build();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

@@ -10,8 +10,8 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
     {
         builder.ToTable("Booking");
         builder.HasKey(b => b.Id);
-        builder.Property(b => b.StartDate).IsRequired();
-        builder.Property(b => b.EndDate).IsRequired();
+        builder.Property(b => b.StartDate).IsRequired(true);
+        builder.Property(b => b.EndDate).IsRequired(true);
         builder.Property(c => c.TotalCost).IsRequired().HasColumnType("decimal(18,2)");
 
         builder.HasOne(b => b.Car).WithMany(c => c.Bookings).HasForeignKey(b => b.CarId);

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CarRendalSystem.Dal.Entities;
 
-namespace CarRendalSystem.Bll.DTOs
+namespace CarRendalSystem.Bll.DTOs;
+
+public class ReviewCreateDto
 {
-    public class ReviewCreateDto
-    {
-    }
+    public long CustomerId { get; set; }
+    public long CarId { get; set; }
+    public decimal Rating { get; set; }
+    public string Comment { get; set; }
 }

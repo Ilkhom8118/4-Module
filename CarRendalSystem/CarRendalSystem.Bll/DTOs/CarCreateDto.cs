@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CarRendalSystem.Dal.Entities;
 
-namespace CarRendalSystem.Bll.DTOs
+namespace CarRendalSystem.Bll.DTOs;
+
+public class CarCreateDto
 {
-    public class CarCreateDto
-    {
-    }
+    public string Model { get; set; }
+    public string Brand { get; set; }
+    public DateTime Year { get; set; }
+    public decimal PricePerDay { get; set; }
+
 }
