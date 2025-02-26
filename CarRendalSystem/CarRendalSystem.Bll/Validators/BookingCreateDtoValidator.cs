@@ -22,7 +22,7 @@ namespace CarRendalSystem.Bll.Validators
 
             // EndDate StartDate dan keyin bo‘lishi kerak
             RuleFor(booking => booking.EndDate)
-                .GreaterThan(booking => booking.StartDate).WithMessage("EndDate StartDate dan keyin bo'lishi kerak.");
+                .GreaterThan(booking => booking.EndDate).WithMessage("EndDate StartDate dan keyin bo'lishi kerak.");
 
             // TotalCost 0 dan katta bo‘lishi kerak
             RuleFor(booking => booking.TotalCost)
